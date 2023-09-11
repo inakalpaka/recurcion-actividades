@@ -1,17 +1,16 @@
 let string = "WWWWWWWWWWWWBWWWWWWWWWWWWWWBWWWWWWWWWMMWWWWWWWHWWWWWWWWWW";
 
-function Codificación(str, i = 0, c = 1, nStr) { //arr = arreglo donde se busca el numero n, i indice , indice final
+function Codificación(str, nStr, i = 0, c = 1) { //arr = arreglo donde se busca el numero n, i indice , indice final
     if (str.length === i + 1) {
-        console.log(i + "i" + c + "c");
+        console.log(nStr);
         return true;
     }
     if (str[i] === str[i + 1]) {
-        return Codificación(str, i + 1, c + 1);
+        return Codificación(str,nStr, i + 1, c + 1);
     } else {
-        console.log(nStr + c.toString() + str[i]);
         nStr = nStr + c.toString() + str[i];
-        return Codificación(str, i + 1, c = 1)
+        return Codificación(str,nStr, i + 1, c = 1)
     }
 }
-console.log(Codificación(string));
-
+let a = "";
+console.log(Codificación(string,a));
